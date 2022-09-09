@@ -7,6 +7,16 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/screenResult"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#D5D2D2"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text=""
+        android:textSize="24sp" />
+
+    <TextView
         android:id="@+id/screen"
         android:layout_width="match_parent"
         android:layout_height="200dp"

@@ -8,10 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     public Button btnDivision, btnMultiply, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnClean, btnEqual, btnMinus, btnAdd;
-    public TextView screen;
+    public TextView screen, screenResult;
     public int num1, num2;
     public String flag;
-    public float r;
+    public int r;
 
 
     @Override
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void initViews() {
         screen = findViewById(R.id.screen);
+        screenResult = findViewById(R.id.screenResult);
         btn0 = findViewById(R.id.btn0);
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
@@ -46,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
         btnClean.setOnClickListener(v -> {
             if (screen.getText() == "")
                 num1 = 0;
-            else {
+            else
                 num1 = 0;
-                num2 = 0;
-            }
+            num2 = 0;
+
             screen.setText("");
         });
         btnAdd.setOnClickListener(v -> {
@@ -91,8 +92,9 @@ public class MainActivity extends AppCompatActivity {
                 default:
                     screen.setText("error");
             }
-            screen.setText(r + " ");
-            num1 = r;
+            screenResult.setText("= " + r);
+            screen.setText("");
+            num1 = 0;
             num2 = 0;
             flag = "";
         });
